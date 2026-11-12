@@ -5,109 +5,120 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>O Baiano Churrasqueiro · sem frufru</title>
 <meta name="description" content="Melhor casa de carnes da Bahia. Aqui o churrasco é sem frufru e a carne é pra banguela. 7 unidades, cardápio, axé ao vivo e pedido no WhatsApp.">
-<meta name="theme-color" content="#121110">
+<meta name="theme-color" content="#0E0C0A">
 <link rel="icon" href="fotos/logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/estilo.css?v=20261112182623">
+<link rel="stylesheet" href="assets/site.css?v=20261112192849">
 </head>
 <body>
 <div class="aviso-demo" id="aviso-demo" hidden>Demonstração: o WhatsApp ainda é um número de exemplo.</div>
 
 <header class="topo">
-  <div class="embrulho">
-    <a class="marca" href="index.html"><img src="fotos/logo.jpg" alt=""><b>O Baiano</b></a>
-    <nav aria-label="Principal">
-      <a href="#unidades">Unidades</a>
-      <a href="cardapio.html">Cardápio</a>
-      <a href="#axe">Axé</a>
-      <a href="#praia-do-forte">História</a>
-    </nav>
-    <a class="bt" href="#pedir">Pedir / reservar</a>
-  </div>
+  <a class="marca" href="index.html"><img src="fotos/logo.jpg" alt=""><b>O Baiano</b></a>
+  <nav aria-label="Principal">
+    <a href="#unidades">Unidades</a>
+    <a href="cardapio.html">Cardápio</a>
+    <a href="#axe">Axé</a>
+    <a href="#praia-do-forte">Praia do Forte</a>
+  </nav>
+  <a class="bt bt-brasa" href="#pedir">Pedir / reservar</a>
 </header>
 
 <main>
-<!-- ============ capa ============ -->
-<section class="capa">
-  <div class="embrulho">
-    <div class="capa-grade">
-      <div>
-        <p class="sobre">Melhor casa de carnes da Bahia · 7 unidades</p>
-        <h1><span>Sem</span><span class="riscado">frufru.</span></h1>
-        <p class="lede">Aqui o churrasco é sem frufru e a carne é <b>pra banguela</b>. Axé tocando o tempo todo.</p>
-        <div class="capa-acoes">
-          <a class="bt bt-preto" href="#perto">Qual unidade é mais perto?</a>
-          <a class="bt" href="cardapio.html">Ver o cardápio</a>
-        </div>
-      </div>
-      <figure class="capa-foto">
-        <img src="fotos/carne-na-brasa.jpg" alt="Peça de carne crua, bem marmorizada, sendo levada para a grelha com brasa acesa embaixo" width="361" height="440">
-        <span class="fitinha" aria-hidden="true">Lembrança do Baiano · Bahia</span>
-        <figcaption>Os sons que o homem raiz mais ouve.</figcaption>
-      </figure>
-    </div>
+<!-- ============ CENA 1: acende a brasa ============ -->
+<section class="brasa" id="brasa" aria-label="Capa">
+  <div class="brasa-palco">
+    <div class="brilho" aria-hidden="true"></div>
+    <svg class="carvoes" id="carvoes" viewBox="0 0 1000 360" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <defs>
+        <radialGradient id="gBrasa" cx="50%" cy="40%" r="70%">
+          <stop offset="0" stop-color="#FFD24A"/>
+          <stop offset=".45" stop-color="#FF6A13"/>
+          <stop offset="1" stop-color="#7A1A05"/>
+        </radialGradient>
+      </defs>
+    </svg>
+    <div class="fagulhas" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
 
-    <div class="perto surge" id="perto">
-      <h2>A mais perto de você</h2>
+    <figure class="grelha">
+      <img src="fotos/carne-na-brasa.jpg" alt="Peça de carne crua, bem marmorizada, indo pra grelha com a brasa acesa embaixo" width="361" height="440" fetchpriority="high">
+      <span class="vapor" aria-hidden="true"><i></i><i></i><i></i></span>
+    </figure>
+
+    <div class="brasa-texto">
+      <p class="brasa-sobre">Melhor casa de carnes da Bahia</p>
+      <h1 aria-label="Sem frufru. Aqui a carne é pra banguela.">
+        <span class="sem" aria-hidden="true">Sem</span>
+        <span class="frufru" aria-hidden="true"><span class="l"><i class="t">F</i><i class="f">F</i></span><span class="l"><i class="t">R</i><i class="f">R</i></span><span class="l"><i class="t">U</i><i class="f">U</i></span><span class="l"><i class="t">F</i><i class="f">F</i></span><span class="l"><i class="t">R</i><i class="f">R</i></span><span class="l"><i class="t">U</i><i class="f">U</i></span><span class="vazio"></span></span>
+      </h1>
+      <p class="banguela">Aqui a carne é <b>pra banguela.</b></p>
+      <div class="brasa-acoes">
+        <a class="bt bt-brasa" href="#unidades">Achar a unidade</a>
+        <a class="bt bt-claro" href="cardapio.html">Ver o cardápio</a>
+      </div>
+    </div>
+    <p class="rola-dica" aria-hidden="true">Rola pra acender a brasa</p>
+  </div>
+</section>
+
+<!-- ============ CENA 2: fitas no gradil ============ -->
+<section class="gradil" id="unidades" aria-labelledby="t-unid">
+  <div class="gradil-palco">
+    <div class="gradil-cab">
+      <h2 id="t-unid">7 fitas, 1 Baiano.</h2>
+      <p class="gradil-dica">Toque na fita pra abrir a unidade.</p>
+    </div>
+    <div class="gradil-quadro">
+      <div class="lancas" aria-hidden="true"></div>
+      <div class="trilho" aria-hidden="true"></div>
+      <div class="barras" aria-hidden="true"></div>
+      <div class="trilho trilho-baixo" aria-hidden="true"></div>
+      <ul class="fitas" id="fitas" aria-label="Unidades"></ul>
+    </div>
+  </div>
+</section>
+
+<section class="perto" id="perto" aria-labelledby="t-perto">
+  <div class="embrulho perto-grade">
+    <h2 id="t-perto">Qual fita é a sua?</h2>
+    <div>
+      <p>A mais perto de você, pela localização do celular ou pelo bairro.</p>
       <div class="perto-linha">
         <button class="bt bt-preto" type="button" id="btn-local">Usar minha localização</button>
         <label class="oculto" for="sel-bairro">Ou escolha seu bairro</label>
         <select id="sel-bairro"><option value="">ou escolha seu bairro…</option></select>
       </div>
-      <div class="perto-res" id="perto-res" aria-live="polite"></div>
+    </div>
+    <div class="perto-res" id="perto-res" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- ============ você escolhe, a gente assa ============ -->
+<section class="assa">
+  <div class="embrulho">
+    <p class="assa-frase">
+      Aqui é assim. Você escolhe <img class="em-linha" src="fotos/voce-escolhe.jpg" alt="O Baiano segurando uma peça de carne embalada a vácuo" loading="lazy" width="361" height="338"> a peça.
+      A gente assa <img class="em-linha" src="fotos/picanha-batata.jpg" alt="O Baiano à mesa com hambúrguer, tábua com osso e batata" loading="lazy" width="361" height="450"> na brasa.
+      Batata raiz <img class="em-linha" src="fotos/batata-raiz.jpg" alt="Pacote amarelo da Batata O Baiano, sua batata sem frufru" loading="lazy" width="361" height="640"> feita com casca.
+    </p>
+    <div class="assa-pe">
+      <p>"A melhor carne da sua vida com uma batata raiz feita com casca. Aqui é sem frufru." E pra quem não come água: Sincorá ou Campo Largo.</p>
+      <a class="bt bt-preto" href="cardapio.html">Abrir o cardápio</a>
     </div>
   </div>
 </section>
 
-<div class="faixas" aria-hidden="true">
-  <div class="faixa f1"><span class="corre" data-corre="-0.35">SEM FRUFRU ✦ CARNE PRA BANGUELA ✦ AXÉ O TEMPO TODO ✦ MIGO, É PESADO ✦ NA MORAL ✦ SEM FRUFRU ✦ CARNE PRA BANGUELA ✦ AXÉ O TEMPO TODO ✦</span></div>
-  <div class="faixa f2"><span class="corre" data-corre="0.3">BARRA ✦ MORRO DO IPIRANGA ✦ HORTO ✦ PATAMARES ✦ PITUBA ✦ PRAIA DO FORTE ✦ VILAS DO ATLÂNTICO ✦ BARRA ✦ MORRO DO IPIRANGA ✦ HORTO ✦</span></div>
-</div>
-
-<!-- ============ unidades ============ -->
-<section class="secao" id="unidades">
+<!-- ============ axé de quinta: pulseira ============ -->
+<section class="axe" id="axe" aria-labelledby="t-axe">
   <div class="embrulho">
-    <div class="secao-topo">
-      <div><span class="selo">7 fitinhas, 1 Baiano</span><h2>As unidades</h2></div>
-      <p>Toque numa fita para ver no mapa. "Como chegar" abre a rota no seu celular.</p>
-    </div>
-    <div class="unid-grade">
-      <ul class="fitas" id="fitas"></ul>
-      <div class="mapa">
-        <iframe id="mapa" title="Mapa da unidade escolhida" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <p id="mapa-legenda">Barra</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ você escolhe ============ -->
-<section class="secao escolhe">
-  <div class="embrulho">
-    <span class="selo">Como funciona</span>
-    <p class="citacao surge">Aqui é assim. <em>Você escolhe.</em> A gente assa.</p>
-    <div class="mosaico">
-      <figure class="surge"><img src="fotos/voce-escolhe.jpg" alt="O Baiano segurando uma peça de carne embalada a vácuo" loading="lazy" width="361" height="338"><figcaption><b>Você escolhe</b> a peça na geladeira.</figcaption></figure>
-      <figure class="surge"><img src="fotos/picanha-batata.jpg" alt="O Baiano à mesa com hambúrguer, tábua com osso e batata" loading="lazy" width="361" height="450"><figcaption>A melhor carne da sua vida com uma <b>batata raiz feita com casca</b>.</figcaption></figure>
-      <figure class="surge"><img src="fotos/batata-raiz.jpg" alt="O Baiano mostrando o pacote amarelo da Batata O Baiano, sua batata sem frufru, com carne na tábua" loading="lazy" width="361" height="640"><figcaption>"Sua batata <b>sem frufru</b>."</figcaption></figure>
-    </div>
-    <p style="margin-top:30px"><a class="bt bt-amarelo" href="cardapio.html">Abrir o cardápio</a></p>
-  </div>
-</section>
-
-<!-- ============ axé ============ -->
-<section class="secao axe" id="axe">
-  <div class="embrulho">
-    <div class="secao-topo">
-      <div><span class="selo">Axé do Baiano</span><h2>Quinta tem axé na Pituba</h2></div>
-      <p>Autorais no O Baiano Pituba, quinta-feira. Couvert + pulseira. Reserve a mesa antes que lota.</p>
-    </div>
-    <div class="axe-grade">
-      <ul class="shows" id="shows"></ul>
-      <div class="radiola" id="radiola">
-        <div class="disco" aria-hidden="true"></div>
+    <h2 id="t-axe">Quinta tem axé<br>na Pituba.</h2>
+    <p class="axe-lede">Autorais no O Baiano Pituba. Couvert com pulseira no braço. Reserva a mesa antes que lota.</p>
+    <ul class="pulseiras" id="shows"></ul>
+    <div class="radiola" id="radiola">
+      <div class="disco" aria-hidden="true"></div>
+      <div>
         <h3>Playlist de axé</h3>
         <p>A mesma que toca na casa. Bota pra tocar no churrasco de casa também.</p>
         <p id="radiola-acao"></p>
@@ -117,26 +128,24 @@
 </section>
 
 <!-- ============ Praia do Forte ============ -->
-<section class="secao forte" id="praia-do-forte">
-  <div class="embrulho forte-grade">
-    <img src="fotos/noite-ao-ar-livre.jpg" alt="Noite ao ar livre com varal de luzes e mesas cheias" loading="lazy" width="361" height="640">
-    <div>
-      <span class="selo">Praia do Forte</span>
-      <p class="palavras" id="palavras">Geramos movimento numa área até então pouco frequentada. Axé tocando o tempo todo e sempre a melhor carne do mundo. Muitas famílias reunidas.</p>
-      <p>Av. do Farol, 2907, no estacionamento do Projeto Baleia Jubarte. Abre às 14h.</p>
-      <p class="fonte">Palavras do próprio Baiano, na legenda do Instagram.</p>
-      <a class="bt bt-preto" href="#u-forte" data-ver="forte">Ver no mapa</a>
-    </div>
+<section class="forte" id="praia-do-forte" aria-labelledby="t-forte">
+  <div class="embrulho">
+    <h2 id="t-forte" class="forte-nome">Praia do Forte</h2>
+    <figure class="forte-foto">
+      <img src="fotos/noite-ao-ar-livre.jpg" alt="Noite ao ar livre com varal de luzes e mesas cheias" loading="lazy" width="361" height="640">
+    </figure>
+    <p class="palavras" id="palavras">Geramos movimento numa área até então pouco frequentada. Axé tocando o tempo todo e sempre a melhor carne do mundo. Muitas famílias reunidas.</p>
+    <p class="fonte">Palavras do próprio Baiano, na legenda do Instagram.</p>
+    <p>Av. do Farol, 2907, no estacionamento do Projeto Baleia Jubarte. Abre às 14h.</p>
+    <a class="bt bt-claro" href="#u-forte" data-ver="forte">Abrir a fita da Praia do Forte</a>
   </div>
 </section>
 
 <!-- ============ pedir ============ -->
-<section class="secao pedir" id="pedir">
+<section class="pedir" id="pedir" aria-labelledby="t-pedir">
   <div class="embrulho">
-    <div class="secao-topo">
-      <div><span class="selo">Sem fila no zap</span><h2>Pedir ou reservar</h2></div>
-      <p>Preencha, confira a mensagem e mande. Cai direto no WhatsApp da unidade.</p>
-    </div>
+    <h2 id="t-pedir">Pedir ou reservar</h2>
+    <p class="pedir-lede">Preenche, confere a mensagem e manda. Cai direto no WhatsApp da unidade.</p>
     <form class="form" id="form-pedido" novalidate>
       <fieldset class="tipos cheio" id="tipos"><legend>O que você quer?</legend></fieldset>
       <div><label for="p-unid">Unidade</label><select id="p-unid" required></select></div>
@@ -145,9 +154,9 @@
       <div><label for="p-hora">Hora</label><input id="p-hora" type="time" value="19:00" required></div>
       <div><label for="p-pessoas">Quantas pessoas</label><input id="p-pessoas" type="number" min="1" max="200" value="4" inputmode="numeric"></div>
       <div><label for="p-pedido" id="l-pedido">Recado</label><input id="p-pedido" placeholder="Ex.: mesa na calçada"></div>
-      <div class="cheio"><span class="selo" style="margin:0 0 8px">Sua mensagem</span><div class="previa" id="previa" aria-live="polite"></div></div>
+      <div class="cheio"><p class="rotulo">Sua mensagem</p><div class="previa" id="previa" aria-live="polite"></div></div>
       <p class="erro cheio" id="p-erro" role="alert"></p>
-      <div class="cheio" style="display:flex;flex-wrap:wrap;gap:12px">
+      <div class="cheio form-acoes">
         <button class="bt bt-preto" type="submit">Mandar no WhatsApp</button>
         <a class="bt" id="p-ifood" href="#" target="_blank" rel="noopener" hidden>Pedir pelo iFood</a>
       </div>
@@ -157,15 +166,27 @@
 </main>
 
 <footer class="rodape">
-  <div class="embrulho">
-    <p class="disp">Migo, é pesado.</p>
-    <p>O Baiano Churrasqueiro · Salvador, Lauro de Freitas e Praia do Forte · <a href="https://instagram.com/obaianochurrasqueiro" target="_blank" rel="noopener">@obaianochurrasqueiro</a></p>
-    <p class="mini"><a href="cardapio.html">Cardápio</a> · <a href="admin.html">Painel do gerente</a> · Site de demonstração feito pela Zync.</p>
-  </div>
+  <p class="disp">Migo, é pesado. Na moral.</p>
+  <p>O Baiano Churrasqueiro · Salvador, Lauro de Freitas e Praia do Forte · <a href="https://instagram.com/obaianochurrasqueiro" target="_blank" rel="noopener">@obaianochurrasqueiro</a> · <a href="cardapio.html">Cardápio</a> · <a href="admin.html">Painel do gerente</a></p>
+  <p class="mini">Site de demonstração feito pela Zync.</p>
 </footer>
-<a class="bt bt-preto zap-fixo" id="zap-fixo" href="#pedir">WhatsApp</a>
+<a class="bt bt-brasa zap-fixo" id="zap-fixo" href="#pedir">WhatsApp</a>
 
-<script src="assets/dados.js?v=20261112182623"></script>
-<script src="assets/site.js?v=20261112182623"></script>
+<!-- folha da unidade (abre ao tocar na fita) -->
+<div class="folha-fundo" id="folha-fundo" hidden></div>
+<div class="folha" id="folha" role="dialog" aria-modal="true" aria-labelledby="folha-nome" hidden>
+  <button class="folha-fecha" type="button" id="folha-fecha" aria-label="Fechar">×</button>
+  <div class="folha-fita" id="folha-fita"><span>Lembrança do Baiano</span></div>
+  <h3 id="folha-nome"></h3>
+  <p id="folha-end"></p>
+  <p class="linha" id="folha-status"></p>
+  <div class="acoes" id="folha-acoes"></div>
+  <iframe id="mapa" title="Mapa da unidade" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="assets/dados.js?v=20261112192849"></script>
+<script src="assets/site.js?v=20261112192849"></script>
 </body>
 </html>
