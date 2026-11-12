@@ -1,0 +1,242 @@
+/* O Baiano Churrasqueiro — conceito FITA DO BONFIM, SEM FRUFRU.
+   Papel de açougue claro, tinta preta do logo, e as fitinhas do Bonfim
+   (amarelo, vermelho, verde, azul) amarrando tudo: unidades viram fitas,
+   faixas de texto atravessam a página e andam com a rolagem. */
+:root {
+  --papel: #FBF6EA;
+  --papel2: #F1E8D3;
+  --tinta: #121110;
+  --tinta2: #3B3833;
+  --amarelo: #F7C600;
+  --vermelho: #C21D14;
+  --verde: #0A7A3E;
+  --azul: #1450B4;
+  --branco: #FFFFFF;
+  --raio: 4px;
+  --max: 1160px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--papel); color: var(--tinta); font: 400 18px/1.55 'Rubik', system-ui, sans-serif; overflow-x: hidden; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3, .disp { font-family: 'Bowlby One SC', 'Rubik', sans-serif; font-weight: 400; line-height: .95; letter-spacing: .5px; margin: 0; }
+p { margin: 0 0 1em; }
+.embrulho { width: min(100% - 32px, var(--max)); margin-inline: auto; }
+.oculto { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+:focus-visible { outline: 3px solid var(--azul); outline-offset: 3px; }
+
+/* ---------- botões ---------- */
+.bt { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 10px 20px; border: 3px solid var(--tinta); background: var(--branco); color: var(--tinta); font: 700 17px/1.1 'Rubik', sans-serif; text-decoration: none; border-radius: var(--raio); cursor: pointer; box-shadow: 4px 4px 0 var(--tinta); transition: transform .12s, box-shadow .12s; }
+.bt:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--tinta); }
+.bt:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--tinta); }
+.bt-preto { background: var(--tinta); color: var(--branco); box-shadow: 4px 4px 0 var(--amarelo); }
+.bt-amarelo { background: var(--amarelo); }
+.bt-mini { min-height: 42px; padding: 8px 14px; font-size: 16px; box-shadow: 3px 3px 0 var(--tinta); }
+
+/* ---------- topo ---------- */
+.topo { position: sticky; top: 0; z-index: 30; background: var(--tinta); color: var(--branco); }
+.topo .embrulho { display: flex; align-items: center; gap: 14px; min-height: 64px; }
+.marca { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--branco); }
+.marca img { width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--branco); }
+.marca b { font: 400 20px/1 'Bowlby One SC', sans-serif; }
+.topo nav { margin-left: auto; display: flex; gap: 4px; }
+.topo nav a { color: var(--branco); text-decoration: none; font-weight: 600; padding: 10px 12px; border-radius: var(--raio); }
+.topo nav a:hover, .topo nav a[aria-current] { background: var(--amarelo); color: var(--tinta); }
+.topo .bt { box-shadow: none; border-color: var(--amarelo); background: var(--amarelo); min-height: 44px; }
+@media (max-width: 760px) { .topo nav { display: none; } .topo .bt { margin-left: auto; } }
+
+/* ---------- capa ---------- */
+.capa { position: relative; padding: 40px 0 70px; overflow: hidden; }
+.capa-grade { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 40px; align-items: center; }
+.capa-grade > * { min-width: 0; }
+.capa .sobre { font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 16px; margin-bottom: 14px; }
+.capa h1 { font-size: clamp(64px, 13vw, 168px); }
+.capa h1 span { display: block; }
+.capa h1 .riscado { position: relative; display: inline-block; }
+.capa h1 .riscado::after { content: ''; position: absolute; left: -2%; right: -2%; top: 52%; height: .14em; background: var(--vermelho); transform: rotate(-4deg); }
+.capa .lede { font-size: clamp(20px, 2.4vw, 24px); max-width: 32ch; margin: 22px 0 26px; }
+.capa .lede b { background: var(--amarelo); padding: 0 4px; }
+.capa-acoes { display: flex; flex-wrap: wrap; gap: 14px; }
+.capa-foto { position: relative; transform: rotate(2.5deg); }
+.capa-foto img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border: 6px solid var(--tinta); }
+.capa-foto .fitinha { position: absolute; left: -30px; right: -30px; top: 18%; transform: rotate(-9deg); }
+.capa-foto figcaption { margin-top: 10px; font-size: 16px; transform: rotate(-2.5deg); }
+
+/* fitinha do Bonfim (componente) */
+.fitinha { display: block; padding: 8px 18px; background: var(--amarelo); color: var(--tinta); font: 700 15px/1.2 'Rubik', sans-serif; letter-spacing: 3px; text-transform: uppercase; text-align: center; white-space: nowrap; overflow: hidden; clip-path: polygon(0 0, 100% 0, 97% 50%, 100% 100%, 0 100%, 3% 50%); box-shadow: 0 3px 0 rgba(0,0,0,.25); }
+.fitinha.vermelho { background: var(--vermelho); color: var(--branco); }
+.fitinha.verde { background: var(--verde); color: var(--branco); }
+.fitinha.azul { background: var(--azul); color: var(--branco); }
+
+@media (max-width: 860px) {
+  .capa-grade { grid-template-columns: minmax(0, 1fr); gap: 34px; }
+  .capa-foto { max-width: 420px; margin-inline: auto; width: 100%; }
+  .capa-foto .fitinha { left: -10px; right: -10px; }
+}
+
+/* ---------- faixas que andam com a rolagem ---------- */
+.faixas { position: relative; height: 170px; margin: -20px 0 10px; overflow: hidden; }
+.faixa { position: absolute; left: -10%; width: 120%; padding: 12px 0; white-space: nowrap; font: 400 clamp(26px, 4vw, 40px)/1 'Bowlby One SC', sans-serif; will-change: transform; }
+.faixa span { display: inline-block; padding-right: .6em; }
+.faixa.f1 { top: 22px; background: var(--tinta); color: var(--amarelo); transform: rotate(-3deg); }
+.faixa.f2 { top: 92px; background: var(--vermelho); color: var(--branco); transform: rotate(2deg); }
+.faixa .corre { display: inline-block; will-change: transform; }
+
+/* ---------- títulos de seção ---------- */
+.secao { padding: 72px 0; }
+.secao-topo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px 40px; align-items: end; margin-bottom: 34px; }
+.secao-topo > * { min-width: 0; }
+.secao h2 { font-size: clamp(42px, 7vw, 84px); }
+.secao-topo p { font-size: 19px; margin: 0; }
+.selo { display: inline-block; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 15px; background: var(--tinta); color: var(--branco); padding: 4px 10px; margin-bottom: 12px; }
+@media (max-width: 760px) { .secao { padding: 56px 0; } .secao-topo { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---------- mais perto ---------- */
+.perto { background: var(--branco); border: 4px solid var(--tinta); box-shadow: 8px 8px 0 var(--tinta); padding: 24px; margin-top: 46px; }
+.perto h2 { font-size: clamp(28px, 4vw, 40px); margin-bottom: 12px; }
+.perto-linha { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.perto select { min-height: 48px; font: 500 17px 'Rubik', sans-serif; padding: 8px 12px; border: 3px solid var(--tinta); border-radius: var(--raio); background: var(--papel); color: var(--tinta); max-width: 100%; }
+.perto-res { margin-top: 18px; }
+.perto-res:empty { display: none; }
+.achou { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px 20px; align-items: center; padding-top: 18px; border-top: 3px dashed var(--tinta); }
+.achou > * { min-width: 0; }
+.achou .disp { font-size: clamp(30px, 5vw, 46px); }
+.achou .dist { font-weight: 700; }
+.achou .acoes { display: flex; flex-wrap: wrap; gap: 10px; }
+.achou .outras { grid-column: 1 / -1; font-size: 16px; color: var(--tinta2); }
+@media (max-width: 600px) { .achou { grid-template-columns: minmax(0, 1fr); } }
+
+/* status */
+.status { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 16px; padding: 4px 10px; border-radius: 99px; border: 2px solid currentColor; background: var(--branco); }
+.status::before { content: ''; width: 10px; height: 10px; border-radius: 50%; background: currentColor; }
+.status.aberto { color: var(--verde); }
+.status.fechado { color: var(--vermelho); }
+.status.neutro { color: var(--tinta2); }
+
+/* ---------- unidades = fitas ---------- */
+.unid-grade { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 30px; align-items: start; }
+.unid-grade > * { min-width: 0; }
+.fitas { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.fita { position: relative; background: var(--branco); border: 3px solid var(--tinta); border-left-width: 18px; padding: 16px 18px 16px 18px; transition: transform .2s; }
+.fita[data-cor="amarelo"] { border-left-color: var(--amarelo); }
+.fita[data-cor="vermelho"] { border-left-color: var(--vermelho); }
+.fita[data-cor="verde"] { border-left-color: var(--verde); }
+.fita[data-cor="azul"] { border-left-color: var(--azul); }
+.fita.ativa { transform: translateX(8px); box-shadow: -8px 0 0 var(--tinta); }
+.fita .lembra { font-size: 14px; letter-spacing: 3px; text-transform: uppercase; font-weight: 700; color: var(--tinta2); }
+.fita h3 { font-size: clamp(26px, 3.4vw, 34px); margin: 4px 0 8px; }
+.fita .end { margin: 0 0 10px; }
+.fita .linha { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin-bottom: 12px; }
+.fita .nota { font-weight: 700; background: var(--amarelo); padding: 2px 8px; }
+.fita .acoes { display: flex; flex-wrap: wrap; gap: 10px; }
+.mapa { position: sticky; top: 84px; border: 4px solid var(--tinta); background: var(--papel2); }
+.mapa iframe { width: 100%; height: 460px; border: 0; display: block; }
+.mapa p { margin: 0; padding: 12px 14px; font-weight: 600; border-top: 3px solid var(--tinta); background: var(--branco); }
+@media (max-width: 860px) { .unid-grade { grid-template-columns: minmax(0, 1fr); } .mapa { position: relative; top: 0; order: -1; } .mapa iframe { height: 300px; } }
+
+/* ---------- você escolhe ---------- */
+.escolhe { background: var(--tinta); color: var(--branco); }
+.escolhe .selo { background: var(--amarelo); color: var(--tinta); }
+.mosaico { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr) minmax(0, 1fr); gap: 18px; align-items: start; }
+.mosaico > * { min-width: 0; margin: 0; }
+.mosaico img { width: 100%; object-fit: cover; border: 4px solid var(--branco); }
+.mosaico figure:nth-child(1) img { aspect-ratio: 1 / 1; }
+.mosaico figure:nth-child(2) { margin-top: 60px; }
+.mosaico figure:nth-child(2) img { aspect-ratio: 4 / 5; }
+.mosaico figure:nth-child(3) img { aspect-ratio: 3 / 4; }
+.mosaico figcaption { font-size: 17px; margin-top: 10px; }
+.mosaico figcaption b { color: var(--amarelo); }
+.citacao { font: 400 clamp(30px, 5vw, 58px)/1.05 'Bowlby One SC', sans-serif; margin: 46px 0 24px; max-width: 18ch; }
+.citacao em { font-style: normal; color: var(--amarelo); }
+@media (max-width: 760px) { .mosaico { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .mosaico figure:nth-child(1) { grid-column: 1 / -1; } .mosaico figure:nth-child(2) { margin-top: 0; } }
+
+/* ---------- axé ---------- */
+.axe { background: var(--amarelo); }
+.axe .selo { background: var(--vermelho); }
+.axe-grade { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 34px; align-items: start; }
+.axe-grade > * { min-width: 0; }
+.shows { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+.show { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 16px; background: var(--branco); border: 3px solid var(--tinta); padding: 14px; align-items: start; }
+.show > * { min-width: 0; }
+.show .dia { background: var(--tinta); color: var(--amarelo); text-align: center; padding: 10px 4px; }
+.show .dia b { display: block; font: 400 40px/1 'Bowlby One SC', sans-serif; }
+.show .dia span { font-size: 15px; font-weight: 700; text-transform: uppercase; color: var(--branco); }
+.show h3 { font-size: 26px; margin-bottom: 6px; }
+.show p { margin: 0 0 10px; }
+.show .cartaz-mini { grid-column: 1 / -1; }
+.show .cartaz-mini img { width: 100%; max-width: 340px; border: 3px solid var(--tinta); }
+.radiola { background: var(--tinta); color: var(--branco); padding: 26px; text-align: center; border: 3px solid var(--tinta); }
+.disco { width: min(240px, 70%); aspect-ratio: 1; margin: 0 auto 20px; border-radius: 50%; background: radial-gradient(circle, var(--vermelho) 0 17%, var(--tinta) 17.5% 19%, #2a2724 19.5% 21%, #111 21.5% 30%, #2a2724 30.5% 31%, #111 31.5% 40%, #2a2724 40.5% 41%, #111 41.5% 50%, #2a2724 50.5% 51%, #111 51.5% 70%); position: relative; animation: gira 3.2s linear infinite; animation-play-state: paused; }
+.disco::after { content: 'AXÉ'; position: absolute; inset: 0; display: grid; place-items: center; font: 400 22px 'Bowlby One SC', sans-serif; color: var(--amarelo); }
+.radiola.tocando .disco { animation-play-state: running; }
+@keyframes gira { to { transform: rotate(360deg); } }
+.radiola h3 { font-size: 30px; margin-bottom: 10px; }
+.radiola p { font-size: 17px; }
+.radiola .aviso { font-size: 16px; color: #E9E2D2; }
+@media (max-width: 860px) { .axe-grade { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .disco { animation: none; } }
+
+/* ---------- Praia do Forte ---------- */
+.forte-grade { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 40px; align-items: center; }
+.forte-grade > * { min-width: 0; }
+.forte img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border: 6px solid var(--tinta); transform: rotate(-2deg); }
+.forte .palavras { font: 400 clamp(28px, 4.2vw, 50px)/1.12 'Bowlby One SC', sans-serif; margin: 0 0 22px; }
+.forte .palavras span { opacity: .18; transition: opacity .25s; }
+.forte .palavras span.acesa { opacity: 1; }
+.forte .fonte { font-size: 16px; color: var(--tinta2); }
+@media (max-width: 860px) { .forte-grade { grid-template-columns: minmax(0, 1fr); } .forte img { max-width: 360px; } }
+
+/* ---------- pedido ---------- */
+.pedir { background: var(--papel2); border-top: 6px solid var(--tinta); }
+.form { background: var(--branco); border: 4px solid var(--tinta); box-shadow: 8px 8px 0 var(--tinta); padding: 26px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px 18px; }
+.form > * { min-width: 0; }
+.form .cheio { grid-column: 1 / -1; }
+.form label { display: block; font-weight: 700; margin-bottom: 6px; }
+.form input, .form select, .form textarea { width: 100%; min-height: 50px; font: 400 18px 'Rubik', sans-serif; padding: 10px 12px; border: 3px solid var(--tinta); border-radius: var(--raio); background: var(--papel); color: var(--tinta); }
+.form textarea { min-height: 96px; resize: vertical; }
+.tipos { display: flex; flex-wrap: wrap; gap: 10px; border: 0; padding: 0; margin: 0; }
+.tipos legend { font-weight: 700; margin-bottom: 8px; padding: 0; }
+.tipos label { margin: 0; }
+.tipos input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.tipos span { display: inline-block; padding: 10px 14px; border: 3px solid var(--tinta); border-radius: 99px; font-weight: 600; cursor: pointer; background: var(--branco); }
+.tipos input:checked + span { background: var(--tinta); color: var(--amarelo); }
+.tipos input:focus-visible + span { outline: 3px solid var(--azul); outline-offset: 2px; }
+.form .erro { color: var(--vermelho); font-weight: 700; min-height: 1.4em; }
+.previa { background: var(--papel); border: 2px dashed var(--tinta); padding: 14px; white-space: pre-wrap; font-size: 16px; }
+@media (max-width: 600px) { .form { grid-template-columns: minmax(0, 1fr); padding: 18px; } }
+
+/* ---------- cardápio ---------- */
+.menu-cab { padding: 50px 0 20px; }
+.menu-cab h1 { font-size: clamp(56px, 11vw, 130px); }
+.menu-cab p { font-size: 20px; max-width: 40ch; }
+.cats { position: sticky; top: 64px; z-index: 10; background: var(--papel); border-bottom: 3px solid var(--tinta); }
+.cats .embrulho { display: flex; gap: 8px; overflow-x: auto; padding: 10px 0; }
+.cats a { flex: none; text-decoration: none; font-weight: 700; padding: 8px 14px; border: 3px solid var(--tinta); border-radius: 99px; background: var(--branco); }
+.cat { padding: 40px 0 10px; }
+.cat h2 { font-size: clamp(38px, 6vw, 64px); }
+.cat .nota-cat { font-size: 19px; margin: 8px 0 20px; }
+.itens { list-style: none; margin: 0; padding: 0; border-top: 3px solid var(--tinta); }
+.item { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 18px; padding: 18px 0; border-bottom: 2px dashed var(--tinta); }
+.item > * { min-width: 0; }
+.item h3 { font: 700 21px/1.25 'Rubik', sans-serif; }
+.item p { margin: 4px 0 0; color: var(--tinta2); }
+.item .preco { font-weight: 700; white-space: nowrap; text-align: right; }
+.item .preco small { display: block; font-weight: 500; font-size: 15px; color: var(--tinta2); }
+.item.destaque h3::after { content: 'DA CASA'; margin-left: 10px; font-size: 13px; letter-spacing: 2px; background: var(--vermelho); color: var(--branco); padding: 2px 8px; vertical-align: middle; }
+@media (max-width: 520px) { .item { grid-template-columns: minmax(0, 1fr); } .item .preco { text-align: left; } }
+
+/* ---------- rodapé ---------- */
+.rodape { background: var(--tinta); color: var(--branco); padding: 50px 0 90px; }
+.rodape .disp { font-size: clamp(40px, 8vw, 90px); color: var(--amarelo); margin-bottom: 18px; }
+.rodape a { color: var(--branco); }
+.rodape .mini { font-size: 16px; color: #DCD5C7; }
+.zap-fixo { position: fixed; right: 16px; bottom: 16px; z-index: 40; }
+.aviso-demo { background: var(--amarelo); color: var(--tinta); font-size: 16px; text-align: center; padding: 8px 16px; border-bottom: 3px solid var(--tinta); }
+
+/* ---------- entrada com rolagem ---------- */
+.surge { opacity: 0; transform: translateY(28px); transition: opacity .6s, transform .6s; }
+.surge.vista { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .surge { opacity: 1; transform: none; transition: none; } }
+
+[hidden]{display:none!important}

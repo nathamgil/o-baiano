@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Painel do gerente · O Baiano</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#121110">
+<link rel="icon" href="fotos/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/estilo.css?v=20261112182623">
+<link rel="stylesheet" href="assets/admin.css?v=20261112182623">
+</head>
+<body>
+<main id="tela-login" class="login">
+  <form class="login-caixa" id="form-login" novalidate>
+    <img src="fotos/logo.jpg" alt="" width="84" height="84">
+    <h1>Painel do Baiano</h1>
+    <p>Unidades, shows de axé e cardápio. Sem frufru.</p>
+    <div class="credencial" role="note"><b>Acesso de demonstração</b><br>Usuário: <code>gerente</code> · Senha: <code>obaiano</code></div>
+    <label for="l-user">Usuário</label><input id="l-user" autocomplete="username" autocapitalize="none">
+    <label for="l-senha">Senha</label><input id="l-senha" type="password" autocomplete="current-password">
+    <button class="bt bt-preto" type="submit">Entrar</button>
+    <p class="erro" id="login-erro" aria-live="polite"></p>
+    <p><a href="index.html">Voltar para o site</a></p>
+  </form>
+</main>
+
+<div id="tela-painel" hidden>
+  <header class="topo">
+    <div class="embrulho">
+      <span class="marca"><img src="fotos/logo.jpg" alt=""><b>Painel</b></span>
+      <a class="bt bt-mini" href="index.html" target="_blank" rel="noopener" style="margin-left:auto">Ver site</a>
+      <button class="bt bt-mini" id="btn-sair" type="button">Sair</button>
+    </div>
+  </header>
+  <div class="aviso-demo"><b>Modo demonstração.</b> O que você salva aqui aparece no site deste aparelho.</div>
+  <main class="embrulho adm-main">
+    <section id="aba-unidades" class="aba"></section>
+    <section id="aba-shows" class="aba" hidden></section>
+    <section id="aba-cardapio" class="aba" hidden></section>
+    <section id="aba-pedidos" class="aba" hidden></section>
+    <section id="aba-ajustes" class="aba" hidden></section>
+  </main>
+  <nav class="abas" aria-label="Seções do painel">
+    <button type="button" data-aba="unidades" aria-current="page">Unidades</button>
+    <button type="button" data-aba="shows">Shows</button>
+    <button type="button" data-aba="cardapio">Cardápio</button>
+    <button type="button" data-aba="pedidos">Pedidos<span class="badge" id="badge" hidden></span></button>
+    <button type="button" data-aba="ajustes">Ajustes</button>
+  </nav>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+</div>
+<script src="assets/dados.js?v=20261112182623"></script>
+<script src="assets/admin.js?v=20261112182623"></script>
+</body>
+</html>
